@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Contact Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="css/util.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+  <div class="contact1">
+    <div class="container-contact1">
+      <div class="back-icon" style="margin-bottom: 350px;">
+        <a href="index.html">
+
+          <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="contact1-pic js-tilt" data-tilt>
+        <img src="images/contact.png" alt="IMG" />
+      </div>
+      <form class="contact1-form validate-form" action="https://formspree.io/f/xvojvzbl" method="POST">
+        <span class="contact1-form-title"> Therapy Booking Application </span>
+
+        <div class="wrap-input1 validate-input" data-validate="Name is required">
+          <input class="input1" required type="name" name="name" placeholder="Name" />
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+          <input class="input1" required type="email" name="_replyto" placeholder="Email" />
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input" data-validate="Subject is required">
+          <select class="input1" required name="location" placeholder="Location">
+            <option value="" disabled selected>Select a location</option>
+            <option value="calgary">DownTown, Calgary</option>
+            <option value="edmonton">Sunridge Mall, NorthEast</option>
+            <option value="edmonton">Shawnessy, SouthWest</option>
+          </select>
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input" data-validate="Date and Time are required">
+          <input class="input1" type="text" id="datetime" name="datetime" required placeholder="Date and Time" />
+        </div>
+
+        <div class="container-contact1-form-btn">
+          <button class="contact1-form-btn" type="submit">
+            <span>
+              Submit
+              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#datetime", {
+      enable: [
+        {
+          minDate: "today",
+          from: "today",
+          to: "2023-12-31",
+        }
+      ],
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+      disable: [
+        function (date) {
+          // Disable all dates outside of the 10AM to 5PM range
+          return date.getHours() < 10 || date.getHours() >= 17;
+        }
+      ]
+    });
+  </script>
+
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="vendor/select2/select2.min.js"></script>
+
+  <script src="vendor/tilt/tilt.jquery.min.js"></script>
+  <script>
+    $(".js-tilt").tilt({
+      scale: 1.1,
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
